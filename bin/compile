@@ -27,10 +27,15 @@ export_env_dir $ENV_DIR
 #create the cache dir if it doesn't exist
 mkdir -p $CACHE_DIR
 
-mkdir -p $CACHE_DIR/.gems
-gem install -i $CACHE_DIR/.gems --no-rdoc compass
-export PATH=$PATH:$CACHE_DIR/.gems/bin
-export GEM_PATH=$GEM_PATH:$CACHE_DIR/.gems
+#mkdir -p $CACHE_DIR/.gems
+npm install --userconfig $build_dir/.npmrc --production 2>&1
+#gem update --system
+#gem install -i $CACHE_DIR/.gems --no-rdoc compass --version "=0.12.2"
+#gem install -i $CACHE_DIR/.gems --no-rdoc  sass --version "=3.2.13"
+#npm install grunt-cli
+#export PATH=$PATH:$CACHE_DIR/.gems/bin
+#export GEM_PATH=$GEM_PATH:$CACHE_DIR/.gems
+grunt
 
 # create default system.properties 
 if [ ! -f ${BUILD_DIR}/system.properties ]; then
