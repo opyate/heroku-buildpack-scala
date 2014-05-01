@@ -29,7 +29,7 @@ mkdir -p $CACHE_DIR
 
 #mkdir -p $CACHE_DIR/.gems
 #npm install --userconfig $build_dir/.npmrc --production 2>&1
-npm install
+/app/vendor/node/bin/npm install
 #gem update --system
 #gem install -i $CACHE_DIR/.gems --no-rdoc compass --version "=0.12.2"
 #gem install -i $CACHE_DIR/.gems --no-rdoc  sass --version "=3.2.13"
